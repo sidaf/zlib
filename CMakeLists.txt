@@ -194,7 +194,7 @@ target_include_directories(zlib INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOUR
 
 if(UNIX)
     # On unix-like platforms the library is almost always called libz
-   set_target_properties(zlib zlibstatic PROPERTIES OUTPUT_NAME z)
+   set_target_properties(zlib PROPERTIES OUTPUT_NAME z)
 endif()
 
 if(BUILD_SHARED_LIBS)

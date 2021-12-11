@@ -190,6 +190,7 @@ endif()
 
 # Use BUILD_SHARED_LIBS to control whether the result is shared or static like any other typical cmake build
 add_library(zlib ${ZLIB_SRCS} ${ZLIB_ASMS} ${ZLIB_DLL_SRCS} ${ZLIB_PUBLIC_HDRS} ${ZLIB_PRIVATE_HDRS})
+target_include_directories(zlib INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
 
 if(UNIX)
     # On unix-like platforms the library is almost always called libz
